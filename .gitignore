@@ -1,0 +1,38 @@
+## Compilação
+bin/
+obj/
+*.dll
+*.exe
+
+## VSCode e Rider
+.vscode/
+.idea/
+
+## Pacotes
+*.nupkg
+packages/
+
+## Logs
+*.log
+
+## User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## EF Core
+Migrations/
+
+## Configs locais
+appsettings.Development.json
+appsettings.Local.json
+
+## Razor Cache
+**/Generated/
+wwwroot/lib/
+
+## Sistema operacional
+.DS_Store
+Thumbs.db
+ehthumbs.db

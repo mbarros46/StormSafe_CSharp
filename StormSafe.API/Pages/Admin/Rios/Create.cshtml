@@ -1,0 +1,14 @@
+@page
+@model RiosCreateModel
+@{
+    ViewData["Title"] = "Novo Rio";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <label>Nome:</label>
+    <input asp-for="Rio.Nome" />
+    <button type="submit">Salvar</button>
+</form>
+<a asp-page="Index">Voltar</a>

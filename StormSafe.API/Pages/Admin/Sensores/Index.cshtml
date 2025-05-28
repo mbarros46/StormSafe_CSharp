@@ -1,0 +1,32 @@
+@page
+@model SensoresIndexModel
+@{
+    ViewData["Title"] = "Lista de Sensores";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-page="Create">+ Novo Sensor</a>
+
+<table>
+    <thead>
+        <tr><th>ID</th><th>Tipo</th><th>Valor</th><th>Data</th><th>Rio</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var s in Model.Sensores)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Tipo</td>
+            <td>@s.Valor</td>
+            <td>@s.DataLeitura.ToShortDateString()</td>
+            <td>@s.Rio?.Nome</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@s.Id">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

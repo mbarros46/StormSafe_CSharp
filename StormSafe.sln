@@ -1,1 +1,24 @@
-Simulação de solução StormSafe
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormSafe.API", "StormSafe.API\StormSafe.API.csproj", "{B1999999-AAAA-4B4B-9999-123456789999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1999999-AAAA-4B4B-9999-123456789999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1999999-AAAA-4B4B-9999-123456789999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1999999-AAAA-4B4B-9999-123456789999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1999999-AAAA-4B4B-9999-123456789999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AEE9988-2B7A-4428-AE42-1324E8D73F99}
+	EndGlobalSection
+EndGlobal

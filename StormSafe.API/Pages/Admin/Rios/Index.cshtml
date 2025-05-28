@@ -1,0 +1,29 @@
+@page
+@model RiosIndexModel
+@{
+    ViewData["Title"] = "Lista de Rios";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-page="Create">+ Novo Rio</a>
+
+<table>
+    <thead>
+        <tr><th>ID</th><th>Nome</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var rio in Model.Rios)
+    {
+        <tr>
+            <td>@rio.Id</td>
+            <td>@rio.Nome</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@rio.Id">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
