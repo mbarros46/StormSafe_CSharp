@@ -1,8 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35825.156 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormSafe.API", "StormSafe.API\StormSafe.API.csproj", "{B1999999-AAAA-4B4B-9999-123456789999}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormSafe", "StormSafe.csproj", "{1E7E366C-603E-43FB-8BB5-2438F41FE959}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B1999999-AAAA-4B4B-9999-123456789999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1999999-AAAA-4B4B-9999-123456789999}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1999999-AAAA-4B4B-9999-123456789999}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1999999-AAAA-4B4B-9999-123456789999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7E366C-603E-43FB-8BB5-2438F41FE959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7E366C-603E-43FB-8BB5-2438F41FE959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7E366C-603E-43FB-8BB5-2438F41FE959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7E366C-603E-43FB-8BB5-2438F41FE959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8AEE9988-2B7A-4428-AE42-1324E8D73F99}
+		SolutionGuid = {AF6944E4-3D76-4C99-8BF9-FB605D9AC84F}
 	EndGlobalSection
 EndGlobal
