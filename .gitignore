@@ -1,38 +1,63 @@
-## CompilaÃ§Ã£o
-bin/
-obj/
-*.dll
-*.exe
-
-## VSCode e Rider
-.vscode/
-.idea/
-
-## Pacotes
-*.nupkg
-packages/
-
-## Logs
-*.log
-
-## User-specific
+## Ignore arquivos temporários do Visual Studio
+.vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-## EF Core
-Migrations/
+## Build output
+bin/
+obj/
 
-## Configs locais
+## Configurações locais do Rider, VSCode, etc
+.idea/
+.vscode/
+
+## Arquivos de publicação
+*.publish.xml
+*.pubxml
+*.pubxml.user
+
+## Logs
+*.log
+
+## Cache do NuGet
+.nuget/packages/
+
+## Arquivos de pacotes
+*.nupkg
+*.snupkg
+
+## Diretórios de teste
+TestResults/
+
+## Arquivos de configuração local
 appsettings.Development.json
-appsettings.Local.json
 
-## Razor Cache
-**/Generated/
-wwwroot/lib/
+## Arquivos de backup
+*_Backup*/
 
-## Sistema operacional
-.DS_Store
-Thumbs.db
-ehthumbs.db
+## Arquivos gerados pelo IIS Express
+/.vs/
+/IISExpress/
+
+## Arquivos de pacotes de ferramentas
+*.psess
+*.vsp
+
+## Arquivos do Visual Studio Code
+.vscode/
+
+## Outros arquivos temporários
+*.tmp
+*.temp
+*.cache
+*.dbmdl
+*.bak
+
+# Persistente
+*.pdb
+
+# Ignore Docker secrets
+secrets/
+
