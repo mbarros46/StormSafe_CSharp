@@ -1,327 +1,132 @@
-# 🌱 EcoDenuncia API
+# 🌊 StormSafe - Sistema Inteligente de Evacuação em Enchentes
 
-A **EcoDenuncia** é uma API RESTful desenvolvida para registrar e acompanhar denúncias ambientais. A aplicação organiza usuários, denúncias, localizações e órgãos públicos de forma estruturada, facilitando o monitoramento e fiscalização dos problemas ambientais reportados.
-
----
-
-## 🔗 Endpoints Disponíveis
-
-### 👤 Usuário
-| Verbo | Rota                | Descrição                                |
-|-------|---------------------|------------------------------------------|
-| GET   | `/api/Usuario`      | Lista todos os usuários                  |
-| POST  | `/api/Usuario`      | Cadastra um novo usuário                 |
-| GET   | `/api/Usuario/{id}` | Detalha um usuário por ID                |
-| PUT   | `/api/Usuario/{id}` | Atualiza dados de um usuário existente   |
-| DELETE| `/api/Usuario/{id}` | Remove um usuário do sistema             |
-
-### 🏛️ Órgão Público
-| Verbo | Rota                     | Descrição                                      |
-|-------|--------------------------|------------------------------------------------|
-| GET   | `/api/OrgaoPublico`      | Lista todos os órgãos públicos                 |
-| POST  | `/api/OrgaoPublico`      | Cadastra um novo órgão público                 |
-| GET   | `/api/OrgaoPublico/{id}` | Detalha um órgão público por ID                |
-| PUT   | `/api/OrgaoPublico/{id}` | Atualiza dados de um órgão público existente   |
-| DELETE| `/api/OrgaoPublico/{id}` | Remove um órgão público                        |
-
-### 📍 Localização
-| Verbo | Rota                     | Descrição                                    |
-|-------|--------------------------|----------------------------------------------|
-| GET   | `/api/Localizacao`       | Lista todas as localizações                  |
-| POST  | `/api/Localizacao`       | Registra uma nova localização                |
-| GET   | `/api/Localizacao/{id}`  | Detalha uma localização por ID               |
-| PUT   | `/api/Localizacao/{id}` | Atualiza dados de uma localização existente   |
-| DELETE| `/api/Localizacao/{id}` | Remove uma localização                        |
-
-### 🗺️ Estados
-| Verbo | Rota                     | Descrição                               |
-|-------|--------------------------|-----------------------------------------|
-| GET   | `/api/Estado`            | Lista todos os estados                  |
-| POST  | `/api/Estado`            | Registra um novo estado                 |
-| GET   | `/api/Estado/{id}`       | Detalha um estado por ID                |
-| PUT   | `/api/Estado/{id}`       | Atualiza dados de um estado existente   |
-| DELETE| `/api/Estado/{id}`       | Remove um estado                        |
-
-### 🧾 Denúncia
-| Verbo | Rota                | Descrição                                   |
-|-------|---------------------|---------------------------------------------|
-| GET   | `/api/Denuncia`     | Lista todas as denúncias                    |
-| POST  | `/api/Denuncia`     | Registra uma nova denúncia                  |
-| GET   | `/api/Denuncia/{id}`| Detalha uma denúncia por ID                 |
-| PUT   | `/api/Denuncia/{id}`| Atualiza dados de uma denúncia existente    |
-| DELETE| `/api/Denuncia/{id}`| Remove uma denúncia                         |
-
-### 🏙️ Cidades
-| Verbo | Rota                | Descrição                                 |
-|-------|---------------------|-------------------------------------------|
-| GET   | `/api/Cidade`       | Lista todas as cidades                    |
-| POST  | `/api/Cidade`       | Registra uma nova cidade                  |
-| GET   | `/api/Cidade/{id}`  | Detalha uma cidade por ID                 |
-| PUT   | `/api/Cidade/{id}`  | Atualiza dados de uma cidade existente    |
-| DELETE| `/api/Cidade/{id}`  | Remove uma cidade                         |
-
-### 🏘️ Bairros
-| Verbo | Rota                | Descrição                                |
-|-------|---------------------|------------------------------------------|
-| GET   | `/api/Bairro`       | Lista todos os bairros                   |
-| POST  | `/api/Bairro`       | Registra um novo bairro                  |
-| GET   | `/api/Bairro/{id}`  | Detalha um bairro por ID                 |
-| PUT   | `/api/Bairro/{id}`  | Atualiza dados de um bairro existente    |
-| DELETE| `/api/Bairro/{id}`  | Remove um bairro                         |
-
-### 📊 Acompanhamento de Denúncia
-| Verbo | Rota                                 | Descrição                                     |
-|-------|--------------------------------------|-----------------------------------------------|
-| GET   | `/api/AcompanhamentoDenuncia`        | Lista todos os acompanhamentos                |
-| POST  | `/api/AcompanhamentoDenuncia`        | Cria novo acompanhamento                      | 
-| GET   | `/api/AcompanhamentoDenuncia/{id}`   | Detalha um acompanhamento por ID              |
-| PUT   | `/api/AcompanhamentoDenuncia/{id}`   | Atualiza dados de um acompanhamento por ID    |
-| DELETE| `/api/AcompanhamentoDenuncia/{id}`   | Remove um acompanhamento                      |
+> Projeto acadêmico da disciplina **Advanced Business Development with .NET**  
+> FIAP - Global Solution 2025
 
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 📌 Descrição
 
-- ASP.NET Core 8 Web API
-- Entity Framework Core
-- Banco de Dados Oracle
-- Swagger (OpenAPI)
-- Serialização JSON com ReferenceHandler.IgnoreCycles
+StormSafe é uma plataforma web desenvolvida em .NET 8 que monitora sensores de nível de água instalados em rios e envia alertas para rotas seguras de evacuação em casos de enchente. O sistema oferece:
 
----
-
-## 🧪 Exemplos de Testes
-
-### 🔹 Criar Usuário
-
-```json
-POST /api/Usuario
-{
-  "nome": "João Silva",
-  "email": "joao@email.com",
-  "senha": "123456",
-  "tipoUsuario": "USER"
-}
-```
-
-### 🔹 Criar Órgão Público
-
-```json
-POST /api/OrgaoPublico
-{
-  "nome": "Secretaria do Meio Ambiente MG",
-  "areaAtuacao": "Ambiental"
-}
-```
-
-### 🔹 Criar Localização
-
-```json
-POST /api/Localizacao
-{
-  "logradouro": "Av Paulista",
-  "numero": "1106",
-  "complemento": "5º andar",
-  "cep": "01311-000",
-  "idBairro": "GUID_DO_BAIRRO"
-}
-```
-
-### 🔹 Criar Estado
-
-```json
-POST /api/Estado
-{
-  "nome": "Santa Catarina",
-  "uf": "SC"
-}
-```
-
-### 🔹 Criar Denúncia
-
-```json
-POST /api/Denuncia
-{
-  "idUsuario": "GUID_DO_USUARIO",
-  "idLocalizacao": "GUID_DA_LOCALIZACAO",
-  "idOrgaoPublico": "GUID_DO_ORGAO",
-  "dataHora": "2025-06-02T16:03:04.057Z",
-  "descricao": "Descarte de resíduos tóxicos próximo ao rio."
-}
-```
-
-### 🔹 Criar Cidade
-
-```json
-POST /api/Cidade
-{
-  "nome": "Campinas",
-  "idEstado": "GUID_DO_ESTADO"
-}
-```
-
-### 🔹 Criar Bairro
-
-```json
-POST /api/Bairro
-{
-  "nome": "Taquaral",
-  "idCidade": "GUID_DA_CIDADE"
-}
-```
-
-### 🔹 Criar Acompanhamento
-
-```json
-POST /api/acompanhamentodenuncia
-{
-  "status": "EmAndamento",
-  "dataAtualizacao": "2025-06-02T16:40:00.000Z",
-  "observacao": "A prefeitura iniciou a limpeza.",
-  "denunciaId": "GUID_DA_DENUNCIA"
-}
-```
+- Gerenciamento de **rios**, **sensores**, **usuários** e **rotas de evacuação**
+- Interface administrativa com **Razor Pages** e **TagHelpers**
+- API RESTful com **Swagger**
+- Banco de dados relacional via **Entity Framework Core**
 
 ---
 
-## 🚀 Instruções de Execução
+## 🧱 Diagrama Entidade-Relacionamento
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/larissa557197/EcoDenuncia-gs-DotNet.git 
-   ```
+📊 Relacionamento 1:N entre Rio e Sensor.  
+🧑 Usuário cadastra rotas e visualiza alertas.
 
-2. Configure a string de conexão Oracle no `appsettings.json` e, ou no `appsettings.Development.json` :
-   ```json
-   "ConnectionStrings": {
-    "Oracle": "Data Source=oracle.fiap.com.br:1521/orcl;User ID=RMXXXXXX;Password=XXXXXX;"
-   }
-   ```
+```
+[USUARIO]---(1:N)---[ALERTA]
+    |
+[ROTA EVACUAÇÃO]
 
-3. Aplique as migrations:
-   ```bash
-   dotnet ef database update
-   ```
+[RIO]---(1:N)---[SENSOR]
+```
 
-4. Execute o projeto:
-   ```bash
-   dotnet run
-   ```
-
-5. Acesse a documentação:
-   ```
-   http://localhost:{porta}/swagger/index.html
-   ```
+> Modelo implementado com base em boas práticas e normalização até 3FN.
 
 ---
 
-## 🧩 Diagramas do Projeto
+## 🏗️ Desenvolvimento
 
-O projeto está respaldado por uma estrutura bem definida, com diagramas que facilitam a compreensão:
+### 🔧 Tecnologias utilizadas
 
-- 🗺️ **Diagrama Entidade-Relacionamento (DER)**:
-        - Representa as relações entre:
-           `Denuncia`, `Usuario`, `Localizacao`, `OrgaoPublico`, `Acompanhamento`, `Bairro`, `Cidade` e `Estado`.
-        - 📦 Entidades e Relacionamentos
-              - 🧾 Denuncia:
-                    IdUsuario → 🔗 Usuario.IdUsuario
-                    IdLocalizacao → 🔗 Localizacao.IdLocalizacao
-                    IdOrgaoPublico → 🔗 OrgaoPublico.IdOrgaoPublico
-              - 📍 Localizacao:
-                    IdBairro → 🔗 Bairro.IdBairro
-              - 🏘️ Bairro:
-                    IdCidade → 🔗 Cidade.IdCidade
-              - 🏙️ Cidade:
-                    IdEstado → 🔗 Estado.IdEstado
+- ASP.NET Core 8
+- Entity Framework Core + Migrations
+- SQL Server LocalDB
+- Razor Pages + TagHelpers
+- Swagger para documentação
+- Visual Studio 2022
 
-### 🧩 Relações:
+### 🧭 Organização de Pastas
 
-| Entidade     | Relacionamento com           |   Tipo    |
-|--------------|------------------------------|-----------|
-| Denuncia     |      Usuario                 |    N:1    |
-| Denuncia     |      Localizacao             |    N:1    |
-| Denuncia     |      OrgaoPublico            |    N:1    |
-| Denuncia     |      AcompanhamentoDenuncia  |    1:N    |
-| Localizacao  |      Bairro                  |    N:1    |
-| Bairro       |      Cidade                  |    N:1    |
-| Cidade       |      Estado                  |    N:1    |
+```
+StormSafe/
+├── Controllers/
+├── Models/
+├── Data/              # DbContext e Migrations
+├── Views/             # Razor Pages
+├── wwwroot/           # Assets (CSS, JS)
+└── Program.cs
+```
 
+### ⚙️ Execução local
 
-## 🧠 Arquitetura em Camadas
+```bash
+# Clonar o projeto
+git clone https://github.com/SEU_USUARIO/StormSafe.git
 
-A solução segue o modelo de arquitetura em camadas com responsabilidades bem definidas:
+# Navegar até a pasta
+cd StormSafe
 
-### 📁 Controllers
+# Restaurar pacotes
+dotnet restore
 
-* Expõem os endpoints da API REST (GET, POST, PUT, DELETE).
-* Chamam os métodos do domínio e lidam com DTOs para entrada e saída de dados.
+# Atualizar banco de dados
+dotnet ef database update
 
-### 📁 Domain
+# Executar
+dotnet run
+```
 
-* Contém enums e regras de negócio.
-* Livre de dependências externas (como Entity Framework).
-* Ex: `StatusDenuncia`, `TipoUsuario`, classes de exceções.
-
-### 📁 DTO (Data Transfer Objects)
-
-* Objetos usados para transportar dados da API para o domínio e vice-versa.
-* Subdividido em:
-
-  * `Request`: dados enviados pelo cliente.
-  * `Response`: dados retornados ao cliente.
-
-### 📁 Infrastructure
-
-* Onde estão os detalhes da implementação, acesso a banco e persistência.
-
-#### 📁 Contexts
-
-* Contém a classe `EcoDenunciaContext` (herda de `DbContext`).
-* Define os `DbSet` de cada entidade e aplica configurações dos mapeamentos.
-
-#### 📁 Mappings
-
-* Contém as classes de configuração das entidades para o banco.
-* Usa `IEntityTypeConfiguration<T>` para definir tabelas, tamanhos, chaves, relacionamentos etc.
-
-#### 📁 Persistence
-
-* Contém as **entidades** que representam as tabelas no banco Oracle.
-* Cada entidade encapsula suas validações e métodos como `Create` ou `Atualizar`.
-
-#### 📁 Repositories *(opcional)*
-
-* Implementa o padrão **Repository Pattern** para abstrair o acesso ao banco.
-* Facilita testes e manutenção.
-
-### 📁 Migrations
-
-* Geradas pelo Entity Framework Core.
-* Representam as versões do banco de dados e permitem aplicar alterações via `dotnet ef`.
-
-### 📄 appsettings.json / appsettings.Development.json
-
-* Contêm configurações da aplicação, como string de conexão Oracle, logs e ambiente.
-
-### 📄 Program.cs
-
-* Arquivo principal de inicialização do ASP.NET Core.
-* Registra serviços, middlewares e configura Swagger, contexto, CORS, etc.
-
-### 📄 README.md
-
-* Documentação geral do projeto, com instruções, exemplos de uso e arquitetura.
+Acesse:
+- Interface Web: https://localhost:5001/Rios
+- Swagger: https://localhost:5001/swagger
 
 ---
 
-## 👥 Integrantes
+## 🧪 Testes
 
-| Nome             | RM       |
-|------------------|----------|
-| Larissa Muniz    | RM557197 |
-| João V. Michaeli | RM555678 |
-| Henrique Garcia  | RM558062 |
+> A aplicação foi testada manualmente via Swagger, Navegador e banco de dados.
+
+### Casos testados
+
+| Caso                           | Resultado Esperado                  | Status |
+|--------------------------------|-------------------------------------|--------|
+| Criar novo Rio                 | Rio salvo no banco                  | ✅     |
+| Cadastrar Sensor atrelado a Rio| Sensor aparece vinculado no Swagger| ✅     |
+| Criar Rota e Listar            | Rota visível em Razor Pages         | ✅     |
+| Criar Alerta para Sensor       | Alerta salvo com sucesso            | ✅     |
+| Validação de campos obrigatórios| Retorno 400 no Swagger             | ✅     |
 
 ---
 
-> Projeto acadêmico desenvolvido na FIAP para a Global Solution 2025 — 1º Semestre
+## 🧪 Endpoints Principais
+
+| Método | Rota                          | Descrição                           |
+|--------|-------------------------------|--------------------------------------|
+| GET    | `/api/rios`                   | Listar rios cadastrados              |
+| POST   | `/api/sensores`               | Criar novo sensor                    |
+| GET    | `/api/rios/{id}/sensores`     | Listar sensores de um rio específico|
+| GET    | `/api/rotas`                  | Buscar todas as rotas               |
+| POST   | `/api/alertas`                | Registrar novo alerta               |
+
+---
+
+## 👨‍💻 Integrantes
+
+| Nome                  | RM        |
+|-----------------------|-----------|
+| Miguel Barros Ramos   | RM556652  |
+| Pedro Valentim Merise | RM556826  |
+
+---
+
+## 📹 Vídeos da Entrega
+
+| Tipo         | Link                                  |
+|--------------|---------------------------------------|
+| 🎬 Pitch      | [ASSISTIR AQUI](https://youtu.be/PITCH) |
+| 📽️ Demonstração | [ASSISTIR AQUI](https://youtu.be/DEMO)  |
+
+---
+
+## 📄 Licença
+
+Projeto acadêmico. Uso restrito a fins educacionais (FIAP - 2025).
