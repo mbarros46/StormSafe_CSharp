@@ -1,23 +1,23 @@
 ﻿
-using EcoDenuncia.Domain.Enums;
-using EcoDenuncia.DTO.Request;
-using EcoDenuncia.DTO.Response;
-using EcoDenuncia.Infrastructure.Contexts;
-using EcoDenuncia.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using StormSafe.Domain.Enums;
+using StormSafe.DTO.Request;
+using StormSafe.DTO.Response;
+using StormSafe.Infrastructure.Contexts;
+using StormSafe.Infrastructure.Persistence;
 using System.Net;
 
-namespace EcoDenuncia.Controllers
+namespace StormSafe.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     [Tags("Usuários")]
     public class UsuarioController: ControllerBase
     {
-        private readonly EcoDenunciaContext _context;
+        private readonly StormSafeDbContext _context;
 
-        public UsuarioController(EcoDenunciaContext context)
+        public UsuarioController(StormSafeDbContext context)
         {
             _context = context;
         }
@@ -82,7 +82,7 @@ namespace EcoDenuncia.Controllers
         public async Task<ActionResult<UsuarioResponse>> PostUsuario(UsuarioRequest request)
         {
             var usuario = Usuario.Create(request.Nome, request.Email, request.Senha,
-                Enum.TryParse(request.TipoUsuario, true, out TipoUsuario tipo) ? tipo : TipoUsuario.USER);
+                Enum.TryParse(request.TipoUsuario, true, out TipoUsuario tipo) ? tipo : TipoUsuario.ADMIN);
 
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
@@ -115,7 +115,7 @@ namespace EcoDenuncia.Controllers
                 return NotFound();
 
             usuario.AtualizarUsuario(request.Nome, request.Email, request.Senha,
-                Enum.TryParse(request.TipoUsuario, true, out TipoUsuario tipo) ? tipo : TipoUsuario.USER);
+                Enum.TryParse(request.TipoUsuario, true, out TipoUsuario tipo) ? tipo : TipoUsuario.CIVIL);
 
             _context.Usuarios.Update(usuario);
             await _context.SaveChangesAsync();

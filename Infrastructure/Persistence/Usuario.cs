@@ -1,7 +1,7 @@
-﻿using EcoDenuncia.Domain.Enums;
+﻿using StormSafe.Domain.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace EcoDenuncia.Infrastructure.Persistence
+namespace StormSafe.Infrastructure.Persistence
 {
     public class Usuario
     {
@@ -12,10 +12,9 @@ namespace EcoDenuncia.Infrastructure.Persistence
         public TipoUsuario TipoUsuario { get; private set; }
 
 
-        // relacionanento 1:N
-        public ICollection<Denuncia> Denuncias { get; private set; }
+       
 
-        public Usuario(string nome, string email, string senha, TipoUsuario tipoUsuario = TipoUsuario.USER)
+        public Usuario(string nome, string email, string senha, TipoUsuario tipoUsuario = TipoUsuario.ADMIN)
         {
             ValidarNome(nome);
             ValidarEmail(email);
@@ -33,8 +32,13 @@ namespace EcoDenuncia.Infrastructure.Persistence
             ValidarNome(nome);
             ValidarEmail(email);
             ValidarSenha(senha);
+
+            Nome = nome;
+            Email = email;
+            Senha = senha;
             TipoUsuario = tipoUsuario;
         }
+
 
 
         private void ValidarNome(string nome)
@@ -64,7 +68,7 @@ namespace EcoDenuncia.Infrastructure.Persistence
 
         
 
-        internal static Usuario Create(string nome, string email, string senha, TipoUsuario tipoUsuario = TipoUsuario.USER)
+        internal static Usuario Create(string nome, string email, string senha, TipoUsuario tipoUsuario = TipoUsuario.ADMIN)
         {
             return new Usuario(nome, email, senha, tipoUsuario);
         }

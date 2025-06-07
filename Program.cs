@@ -3,20 +3,34 @@ using StormSafe.Infrastructure.Contexts;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Swagger e Controllers
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configurar conexão Oracle (se necessário, ajustar sua connection string)
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Banco de dados Oracle
 builder.Services.AddDbContext<StormSafeDbContext>(options =>
-    options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseOracle(builder.Configuration.GetConnectionString("Oracle")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Swagger
 app.UseSwagger();
 app.UseSwaggerUI();
+
+// CORS antes da autorização
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 

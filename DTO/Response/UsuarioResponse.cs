@@ -1,4 +1,4 @@
-﻿namespace EcoDenuncia.DTO.Response
+﻿namespace StormSafe.DTO.Response
 {
     public class UsuarioResponse
     {

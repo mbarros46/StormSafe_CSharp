@@ -1,4 +1,4 @@
-﻿namespace EcoDenuncia.Infrastructure.Repositories
+﻿namespace StormSafe.Infrastructure.Repositories
 {
     public interface IRepository<T> where T : class
     {

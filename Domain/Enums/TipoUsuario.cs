@@ -1,8 +1,8 @@
-﻿namespace EcoDenuncia.Domain.Enums
+﻿namespace StormSafe.Domain.Enums
 {
     public enum TipoUsuario
     {
         ADMIN, 
-        USER
+        CIVIL
     }
 }
