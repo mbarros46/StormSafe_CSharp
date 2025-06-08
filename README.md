@@ -60,10 +60,10 @@ StormSafe/
 
 ```bash
 # Clonar o projeto
-git clone https://github.com/SEU_USUARIO/StormSafe.git
+git clone https://github.com/mbarros46/StormSafe_CSharp.git
 
 # Navegar até a pasta
-cd StormSafe
+cd StormSafe_CSharp
 
 # Restaurar pacotes
 dotnet restore
@@ -87,25 +87,25 @@ Acesse:
 
 ### Casos testados
 
-| Caso                           | Resultado Esperado                  | Status |
-|--------------------------------|-------------------------------------|--------|
-| Criar novo Rio                 | Rio salvo no banco                  | ✅     |
-| Cadastrar Sensor atrelado a Rio| Sensor aparece vinculado no Swagger| ✅     |
-| Criar Rota e Listar            | Rota visível em Razor Pages         | ✅     |
-| Criar Alerta para Sensor       | Alerta salvo com sucesso            | ✅     |
-| Validação de campos obrigatórios| Retorno 400 no Swagger             | ✅     |
+| Caso                            | Resultado Esperado                   | Status |
+|---------------------------------|--------------------------------------|--------|
+| Criar novo Rio                  | Rio salvo no banco                   | ✅     |
+| Cadastrar Sensor atrelado a Rio | Sensor aparece vinculado corretamente no Swagger | ✅     |
+| Criar Rota e Listar             | Rota visível em Razor Pages          | ✅     |
+| Criar Alerta para Sensor        | Alerta salvo com sucesso             | ✅     |
+| Validação de campos obrigatórios| Retorno 400 no Swagger               | ✅     |
 
 ---
 
 ## 🧪 Endpoints Principais
 
-| Método | Rota                          | Descrição                           |
-|--------|-------------------------------|--------------------------------------|
-| GET    | `/api/rios`                   | Listar rios cadastrados              |
-| POST   | `/api/sensores`               | Criar novo sensor                    |
-| GET    | `/api/rios/{id}/sensores`     | Listar sensores de um rio específico|
-| GET    | `/api/rotas`                  | Buscar todas as rotas               |
-| POST   | `/api/alertas`                | Registrar novo alerta               |
+| Método | Rota                          | Descrição                            |
+|--------|-------------------------------|----------------------------------------|
+| GET    | `/api/rios`                   | Listar rios cadastrados                |
+| POST   | `/api/sensores`               | Criar novo sensor                      |
+| GET    | `/api/rios/{id}/sensores`     | Listar sensores de um rio específico   |
+| GET    | `/api/rotas`                  | Buscar todas as rotas                 |
+| POST   | `/api/alertas`                | Registrar novo alerta                 |
 
 ---
 
@@ -120,13 +120,13 @@ Acesse:
 
 ## 📹 Vídeos da Entrega
 
-| Tipo         | Link                                  |
-|--------------|---------------------------------------|
-| 🎬 Pitch      | [ASSISTIR AQUI](https://youtu.be/PITCH) |
-| 📽️ Demonstração | [ASSISTIR AQUI](https://youtu.be/DEMO)  |
+| Tipo         | Link                                      |
+|--------------|-------------------------------------------|
+| 🎬 Pitch      | [ASSISTIR AQUI](https://youtu.be/PITCH)  |
+| 📽️ Demonstração | [ASSISTIR AQUI](https://youtu.be/DEMO)   |
 
 ---
 
 ## 📄 Licença
 
-Projeto acadêmico. Uso restrito a fins educacionais (FIAP - 2025).
+Projeto acadêmico desenvolvido para fins exclusivamente educacionais (FIAP - 2025).
